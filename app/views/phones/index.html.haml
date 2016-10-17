@@ -1,0 +1,15 @@
+%h1 Scraped phones from amazon
+%br
+
+.row
+  - @phones.each do |phone|
+    .well.col-xs-12.col-sm-4
+      %img.col-xs-3{src: phone.picture_url}
+      %h3
+        = phone.name
+      %i
+        Price:
+        = number_to_currency(phone.price)
+      %p
+        Stars
+        = phone.stars
